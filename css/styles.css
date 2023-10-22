@@ -67,19 +67,19 @@ main p:nth-child(3) {
 	margin-top: 1rem;
 }
 
-.card:nth-child(2) {
+.card:nth-child(4) {
 	border-top: 3px solid hsl(180, 62%, 55%);
 }
 
-.card:nth-child(3) {
+.card:nth-child(5) {
 	border-top: 3px solid hsl(0, 78%, 62%);
 }
 
-.card:nth-child(4) {
+.card:nth-child(6) {
 	border-top: 3px solid hsl(34, 97%, 64%);
 }
 
-.card:nth-child(5) {
+.card:nth-child(7) {
 	border-top: 3px solid hsl(212, 86%, 64%);
 }
 
@@ -101,6 +101,55 @@ main p:nth-child(3) {
 
 footer {
 	padding-bottom: 3rem;
+}
+
+@media (min-width: 1025px) {
+	main {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-template-rows: auto auto auto auto auto;
+		grid-template-areas:
+			"rel-text rel-text rel-text"
+			"pow-text pow-text pow-text"
+			"our-text our-text our-text"
+			"sup-card tea-card cal-card"
+			"sup-card kar-card cal-card";
+		gap: 2rem;
+	}
+
+	main p:nth-child(1) {
+		grid-area: rel-text;
+		margin: 0 auto 0 auto;
+	}
+	
+	main p:nth-child(2) {
+		grid-area: pow-text;
+		margin: 0 auto 0 auto;
+	}
+	
+	main p:nth-child(3) {
+		grid-area: our-text;
+		margin: 0 auto 0 auto;
+		max-width: 450px;
+		margin-bottom: 2rem;
+		margin-top: 1rem;
+	}
+
+	.card:nth-child(4) {
+		grid-area: sup-card;
+	}
+	
+	.card:nth-child(5) {
+		grid-area: tea-card;
+	}
+	
+	.card:nth-child(6) {
+		grid-area: kar-card;
+	}
+	
+	.card:nth-child(7) {
+		grid-area: cal-card;
+	}
 }
 
 .attribution {
