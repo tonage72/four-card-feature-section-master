@@ -26,7 +26,8 @@ main {
 	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: center;
-	margin: 3rem auto 0 auto;
+	margin: 0rem auto 0 auto;
+	padding: 3rem 0 0 0;
 	width: 85%;
 	max-width: 1280px;
 	margin-bottom: 1rem;
@@ -59,6 +60,7 @@ main p:nth-child(3) {
 	flex-flow: column nowrap;
 	align-items: left;
 	width: clamp(8rem, 85vw, 22rem);
+	box-shadow: 2px 2px 15px rgb(185, 185, 185);
 	max-width: 319px;
 	min-width: 5rem;
 	background-color: white;
