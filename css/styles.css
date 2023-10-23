@@ -17,6 +17,7 @@ img {
 }
 
 body {
+	position: relative;
 	height: 100vh;
 	background-color: hsl(0, 0%, 93%);
 }
@@ -26,32 +27,36 @@ main {
 	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: center;
-	margin: 0rem auto 0 auto;
+	width: 100%;
+	margin: 0 auto 0 auto;
 	padding: 3rem 0 0 0;
 	width: 85%;
 	max-width: 1280px;
 	margin-bottom: 1rem;
 }
 
-main p {
+main div:first-child {
 	text-align: center;
-	max-width: 319px;
+	max-width: 315px;
 	min-width: 5rem;
 }
 
-main p:nth-child(1) {
+main div:first-child span:first-child {
+	display: block;
 	font-size: 1.6rem;
 	color: hsl(229, 6%, 66%);
 }
 
-main p:nth-child(2) {
+main div:first-child span:nth-child(2) {
+	display: block;
 	font-size: 1.6rem;
 	font-weight: 600;
-	margin-bottom: 1rem;
+	padding-bottom: 1rem;
 }
 
-main p:nth-child(3) {
-	margin-bottom: 3rem;
+main div:first-child span:nth-child(3) {
+	display: block;
+	padding-bottom: 2.5rem;
 	color: hsl(229, 6%, 66%);
 }
 
@@ -69,19 +74,19 @@ main p:nth-child(3) {
 	margin-top: 1rem;
 }
 
-.card:nth-child(4) {
+.card:nth-child(2) {
 	border-top: 3px solid hsl(180, 62%, 55%);
 }
 
-.card:nth-child(5) {
+.card:nth-child(3) {
 	border-top: 3px solid hsl(0, 78%, 62%);
 }
 
-.card:nth-child(6) {
+.card:nth-child(4) {
 	border-top: 3px solid hsl(34, 97%, 64%);
 }
 
-.card:nth-child(7) {
+.card:nth-child(5) {
 	border-top: 3px solid hsl(212, 86%, 64%);
 }
 
@@ -106,50 +111,60 @@ footer {
 }
 
 @media (min-width: 1025px) {
+	body {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
+	}
+
 	main {
+		width: 100%;
 		display: grid;
 		grid-template-columns: auto auto auto;
-		grid-template-rows: auto auto auto auto auto;
+		grid-template-rows: min-content min-content min-content;
 		grid-template-areas:
-			"rel-text rel-text rel-text"
-			"pow-text pow-text pow-text"
-			"our-text our-text our-text"
+			"sum-text sum-text sum-text"
 			"sup-card tea-card cal-card"
 			"sup-card kar-card cal-card";
 		gap: 2rem;
+		padding: 0;
 	}
 
-	main p:nth-child(1) {
-		grid-area: rel-text;
+	main div:first-child {
+		grid-area: sum-text;
+		max-width: 450px;
+		height: fit-content;
 		margin: 0 auto 0 auto;
 	}
-	
-	main p:nth-child(2) {
-		grid-area: pow-text;
-		margin: 0 auto 0 auto;
+
+	main div:first-child span:nth-child(1) {
+		font-size: 2rem;
 	}
 	
-	main p:nth-child(3) {
+	main div:first-child span:nth-child(2) {
+		font-size: 2rem;
+	}
+
+	main div:first-child span:nth-child(3) {
 		grid-area: our-text;
 		margin: 0 auto 0 auto;
-		max-width: 450px;
-		margin-bottom: 2rem;
-		margin-top: 1rem;
+		padding-bottom: 1rem;
 	}
 
-	.card:nth-child(4) {
+	.card:nth-child(2) {
 		grid-area: sup-card;
 	}
 	
-	.card:nth-child(5) {
+	.card:nth-child(3) {
 		grid-area: tea-card;
 	}
 	
-	.card:nth-child(6) {
+	.card:nth-child(4) {
 		grid-area: kar-card;
 	}
 	
-	.card:nth-child(7) {
+	.card:nth-child(5) {
 		grid-area: cal-card;
 	}
 }
